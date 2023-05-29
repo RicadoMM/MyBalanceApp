@@ -142,11 +142,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        viewModel.balancedata.removeObservers(this)
-        binding=null
-    }
     fun handleConnectivityScreen(isConnected:Boolean,message:String=""){
         when(isConnected){
             true->{
@@ -164,5 +159,10 @@ class MainActivity : AppCompatActivity() {
                 fbinding.recyclerView.isEnabled=false
             }
         }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.balancedata.removeObservers(this)
+        binding=null
     }
 }

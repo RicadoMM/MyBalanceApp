@@ -99,7 +99,7 @@ class repositorytestMockWebServer {
         result.collect{
             if(it.status==utilities.Result.Status.ERROR){
                 val recordedRequest = mockWebServer.takeRequest()
-                assertEquals("GET", response.http2ErrorCode)
+                assertEquals("GET", recordedRequest.method)
                 assertEquals(it.message.toString(),"HTTP/400 Client Error")
             }
         }

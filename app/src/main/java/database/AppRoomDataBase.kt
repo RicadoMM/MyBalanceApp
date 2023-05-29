@@ -14,7 +14,7 @@ import entities.balance.TransactionsData
 //functions.
 
 @Database(
-    exportSchema =  true,
+    exportSchema =  false,
     version = 1,
     entities = arrayOf(TransactionsData::class
     )
